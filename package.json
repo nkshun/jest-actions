@@ -1,0 +1,18 @@
+{
+  "name": "jest-actions",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^27.2.1",
+    "supertest": "^6.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

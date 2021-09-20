@@ -8,4 +8,10 @@ describe('Get Endpoints (not mocking)', () => {
         expect(res.status).toEqual(200)
         expect(res.text).toEqual('Hi! shun')
     })
+
+    it('/', async () => {
+        const res = await request(app).get('/')
+        expect(res.status).toEqual(400)
+        expect(res.text).toEqual('Who are you?')
+    })
 })

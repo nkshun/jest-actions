@@ -1,4 +1,4 @@
-// server立てずに確認できる
+// mock化することでserver立てずに確認できる
 
 const { Get } = require("../root");
 

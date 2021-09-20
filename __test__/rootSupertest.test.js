@@ -1,4 +1,4 @@
-// super agentでserver立てて確認する
+// super agentで内部的にserverを立てて確認する
 const request = require('supertest')
 const app = require('../server')
 

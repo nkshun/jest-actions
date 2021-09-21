@@ -10,7 +10,7 @@ on:
     branches: [ main ]
 
 jobs:
-  lighthouse-test:
+  build:
     runs-on: ubuntu-latest
 
     strategy:
@@ -28,10 +28,7 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build --if-present
-      - uses: treosh/lighthouse-ci-actions@v2
-        with:
-          configPath: '.github/workflows/lighthouse.json'
-          uploadArtifacts: true
+      - run: npm start &
 
       - name: Run local k6 test
         uses: k6io/action@v0.1

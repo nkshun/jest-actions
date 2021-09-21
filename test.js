@@ -3,7 +3,7 @@ const http = require('k6/http');
 
 export default function() {
   const responses = http.batch([
-    "http://localhost:3000/"
+    "http://127.0.0.1:3000/"
   ]);
 
   console.log(responses[0].status);

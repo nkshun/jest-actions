@@ -1,12 +1,4 @@
-const express = require('express')
-const app = express()
-const router = express.Router()
-const { Get } = require('./root')
-
-router.get('/', Get)
-
-app.use('/', router)
-
-app.listen(3000)
-
-module.exports = app;
+const app = require('./app')
+app.listen(3000, () => {
+  console.log('listen 3000!');
+})

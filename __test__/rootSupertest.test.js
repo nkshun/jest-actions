@@ -1,6 +1,6 @@
 // super agentで内部的にserverを立てて確認する
 const request = require('supertest')
-const app = require('../server')
+const app = require('../app')
 
 describe('Get Endpoints (not mocking)', () => {
     it('/', async () => {

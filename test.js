@@ -7,7 +7,7 @@ export default function() {
   ]);
 
   check(responses[0], {
-    "ok status": res => res.status === 200,
-    "ok text": res => res.body === 'Hi! shun',
+    "ok status": res => res.status === 400,
+    "ok text": res => res.body === 'Who are you?',
   });
 };

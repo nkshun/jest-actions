@@ -21,6 +21,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Install k6
+        run: |
+          curl https://github.com/loadimpact/k6/releases/download/v0.26.2/k6-v0.26.2-linux64.tar.gz -L | tar xvz --strip-components 1
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
@@ -28,10 +32,13 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build --if-present
-      - run: npm start &
+      # - run: npm start &
 
       - name: Run local k6 test
-        uses: k6io/action@v0.1
-        with:
-          wait-on: "http://localhost:3000"
-          filename: test.js
+        # uses: k6io/action@v0.1
+        # with:
+        #   wait-on: "http://localhost:3000"
+        #   filename: test.js
+        run: |
+          npm start & npx wait-on http://localhost:3000
+          ./k6 run test.js

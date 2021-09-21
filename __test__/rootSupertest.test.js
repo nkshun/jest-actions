@@ -11,7 +11,7 @@ describe('Get Endpoints (not mocking)', () => {
 
     it('/', async () => {
         const res = await request(app).get('/')
-        expect(res.status).toEqual(400)
+        expect(res.status).toEqual(200)
         expect(res.text).toEqual('Who are you?')
     })
 })

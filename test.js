@@ -1,5 +1,5 @@
-import { check } from 'k6';
-import http from 'k6/http';
+const { check } = require('k6');
+const http = require('k6/http');
 
 export default function() {
   const responses = http.batch([

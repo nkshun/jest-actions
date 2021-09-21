@@ -38,7 +38,7 @@ jobs:
           npm install
       - name: Build
         run: |
-          DEPLOYMENT=dev npm run build
+          npm run build --if-present
 
       - name: Run local k6 test
         # uses: k6io/action@v0.1

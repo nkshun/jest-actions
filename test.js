@@ -1,7 +1,7 @@
 const { check } = require('k6');
 const http = require('k6/http');
 
-export default function() {
+module.exports = function() {
   const responses = http.batch([
     "http://localhost:3000/"
   ]);

@@ -33,4 +33,5 @@ jobs:
       - name: Run local k6 test
         uses: k6io/action@v0.1
         with:
+          wait-on: "http://localhost:3000"
           filename: test.js
